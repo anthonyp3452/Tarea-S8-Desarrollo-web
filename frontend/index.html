@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📦 Gestión de Productos</h1>
+        </header>
+
+        <main>
+            <section class="form-section">
+                <h2>Agregar Nuevo Producto</h2>
+                <form id="productForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre del Producto:</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Laptop Dell">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="precio">Precio ($):</label>
+                        <input type="number" id="precio" name="precio" step="0.01" min="0" required placeholder="Ej: 1299.99">
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Agregar Producto</button>
+                </form>
+            </section>
+
+            <section class="products-section">
+                <h2>Lista de Productos</h2>
+                <div id="loading" class="loading">Cargando productos...</div>
+                <div id="error" class="error" style="display: none;"></div>
+                <table id="productsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Fecha de Creación</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsBody">
+                        <!-- Products will be inserted here -->
+                    </tbody>
+                </table>
+                <p id="noProducts" class="no-products">No hay productos registrados.</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
